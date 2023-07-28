@@ -41,6 +41,7 @@ class BruteForce:
                         try:
                             if pdf.authenticate(load[:-1]):
                                 pdf.save('Delivery\Decrypted.pdf') # Export the decrypted file to the delivery folder
+                                self.load.append(load[:-1])
                             else:
                                 pass
                         except:
