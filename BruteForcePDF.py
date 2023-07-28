@@ -34,7 +34,7 @@ class BruteForce:
                 pdf = fitz.open(file) 
 
                 # Open the payload file
-                with open('PayLoad','r') as payload:
+                with open('PayLoad\PayLoad','r') as payload:
                     # Loop through all keys and start testing
                     for load in alive_it(payload,title='Delivering PayLoad - '):
                         # Testing
@@ -42,6 +42,7 @@ class BruteForce:
                             if pdf.authenticate(load[:-1]):
                                 pdf.save('Delivery\Decrypted.pdf') # Export the decrypted file to the delivery folder
                                 self.load.append(load[:-1])
+                                break
                             else:
                                 pass
                         except:
